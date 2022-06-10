@@ -1,0 +1,34 @@
+%---------------------------------------------------------------
+\chapter*{Závěr}
+\addcontentsline{toc}{chapter}{Závěr}
+\markboth{Závěr}{Závěr}
+\label{zaver}
+%---------------------------------------------------------------
+
+Ve své práci jsem se zabýval tvorbou mobilní aplikace zpěvníku pro náboženská shromáždění. Provedl jsem analýzu stávajících řešení přípravy a koordinace zpěvu věřících a hudebního doprovodu, z čehož jsem zjistil, že stávající řešení promítače pro koordinaci zpěvu věřících a hudebního doprovodu náboženským shromážděním vyhovuje, zatímco stávající řešení papírového zpěvníku pro přípravu písní není dostačující. Na základě zjištěných informací jsem aplikaci navrhl jako serverovou část v programovacím jazyce Kotlin s použitím technologie Spring Web a klientskou část v podobě iOS a macOS aplikace v programovacím jazyce Swift.
+
+V průběhu implementace jsem narazil na více problémů, mezi které patřilo zalamování zobrazovaného textu, transpozice akordů a multiplatformnost aplikace. iOS a macOS aplikace a podpůrný server jsem přesto naprogramoval a otestoval s pomocí jednotkových testů, REST API jsem otestoval pomocí integračních testů v programu Postman a aplikaci jako celek jsem nakonec otestoval uživatelsky.
+
+Výslednou aplikaci jsem nasadil do obchodu pro iOS a macOS aplikace App Store, ze kterého ji za první měsíc nainstalovala a začala používat náboženská shromáždění v Českém Těšíně i Pyšelích, která do ní dosud nahrála přes 1000 písní v 10 zpěvnících a jsou s aplikací, stejně jako já, spokojeni. Domluvili jsme se proto s těmito shromážděními na pokračující údržbě aplikace a také na propagaci v časopise pro Křesťanské sbory a na webových stránkách Křesťanských sborů.
+
+\section*{Budoucí rozšíření}
+
+V průběhu analýzy, vývoje a testování aplikace jsem od členů kapely dostal mnoho návrhů, které jsem z časových důvodů nemohl všechny do aplikace zahrnout. Mezi ty nejdůležitější patří:
+
+\textbf{Možnost úprav bez připojení k internetu}: V průběhu analýzy jsem zjistil, že je ve~všech náboženských shromážděních dostupné připojení k internetu. Náboženská shromáždění ale během roku pořádají různé akce a tábory, které se často konají v přírodě bez připojení k internetu a pokud v průběhu akce člen hudebního doprovodu nalezne v písni nesprávný akord, nemá možnost jej opravit.
+
+Aplikace by tedy mohla podporovat úpravu písní i bez připojení k internetu. V takovém případě by se změna uložila lokálně a byla by na server nahrána až ve chvíli, kdy bude zařízení připojeno k internetu.
+
+\textbf{Synchronizace playlistů v reálném čase}: V aplikaci jsem implementoval synchronizaci playlistů v podobě tlačítek umožňujících nahrání a stažení playlistu do příslušné kapely včetně možnosti automatického nahrávání všech změn v playlistu do zvolené výchozí kapely. Stále zde ale pro hudebníky zůstává nutnost znovu stáhnout playlist poté, co v něm vedoucí kapely provede změnu. Aplikace by tedy mohla nabídnout zvolení výchozí kapely, ze které by se v reálném čase stahoval playlist a hudebníci by si tak nemuseli po každé změně playlist znovu stahovat.
+
+\textbf{Podpora více verzí a překladů jedné písně}: Některé z písní, které shromáždění zpívají, jsou dostupné v různých verzích a překladech -- některá shromáždění píseň zpívají česky, některá polsky, některá slovensky. V aktuálním stavu musí být každá verze písně do aplikace přidána jako nová píseň. Jedním z možných budoucích rozšíření je tedy přidávání více jazykových verzí písně, kdy následně mezi jednotlivými verzemi budou uživatelé přepínat v nastavení písně.
+
+\textbf{Podpora poznámek i v textu písně}: Aktuální verze aplikace podporuje přidávání soukromých poznámek k písni. Tyto poznámky se následně ukážou na začátku textu písně spolu s~informacemi o tempu písně nebo výchozí transpozici. Tento formát poznámek je zcela dostačující například pro zaznamenání rejstříku, který bude hudebník pro danou píseň používat. V této verzi si ale hudebník nemůže zaznamenat poznámku přímo k řádku, na kterém má přepnout rejstřík. Další funkcionalitou, kterou by tak aplikace mohla v budoucnu poskytnout, je zápis poznámek kdekoliv v textu písně a možnost psát poznámky s pomocí stylusu Apple Pencil.
+
+\textbf{Podpora více oken na platformě macOS}: Někteří členové kapely, kteří využívají aplikaci na operačním systému macOS, jsou zvyklí využívat aplikace v režimu více oken, případně využívají možnost použití více panelů v jednom okně. Aplikace by tedy mohla podporovat zobrazení více písní ve více oknech a otevření více písní ve více panelech v jednom okně.
+
+\textbf{Možnost tisku písní přímo z aplikace}: Ve stávající verzi aplikace můžou členové kapely stáhnout ze serveru píseň jako textový soubor, který mohou následně poslat dalším uživatelům nebo vytisknout. Aplikace by ale mohla nabídnout tisk formou nativního dialogu přímo z iPhonu, iPadu nebo MacBooku.
+
+\textbf{Webová stránka a iOS aplikace pro zobrazení aktuálně přehrávané písně věřícím}: V průběhu analýzy jsem vyhodnotil stávající řešení koordinace zpěvu a hudebního doprovodu jako dostačující a tvorbu vlastního řešení jsem zavrhnul, jelikož by plně nenahradilo používané řešení promítače. Někteří věřící a především promítač by ale uvítali webovou stránku nebo iOS aplikaci, která by zobrazovala text aktuálně přehrávané písně.
+
+\textbf{Pomocná Android a Windows aplikace pro synchronizaci s aplikací OpenSong}: Při analýze jsem došel k závěru, že budu aplikaci koncipovat pro operační systémy iOS a \mbox{macOS} mimojiné také proto, že na platformách Windows a Android již existuje řešení OpenSong, které náboženským shromážděním s menšími výhradami vyhovuje. V budoucnu bych mohl vytvořit podpůrnou aplikaci, která by prováděla synchronizaci písní mezi řešením OpenSong a API rozhraním mé aplikace.

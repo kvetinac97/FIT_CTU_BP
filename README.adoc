@@ -1,0 +1,11 @@
+= Bakalářka
+
+== Zadání
+
+Předmětem práce je vytvoření prototypu mobilní aplikace zpěvníku pro náboženská shromáždění.
+
+ - Analyzujte potřeby náboženských shromáždění a věřících ohledně přípravy a koordinace zpěvu věřících při bohoslužbách a hudebního doprovodu.
+ - Prozkoumejte stávající řešení a vyhodnoťte, zda a jak vyhovují potřebám církví.
+ - Navrhněte aplikaci vyhovující požadavkům s využitím obvyklých postupů softwarového inženýrství.
+ - Implementujte prototyp pro alespoň 1 mobilní platformu.
+ - Prototyp uživatelsky otestujte a navrhněte budoucí vylepšení.
